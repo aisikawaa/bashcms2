@@ -9,7 +9,7 @@ chown www-data:www-data "$appdir" -R
 
 ### RENAME FETCH CGI ###
 cd "$appdir"
-rnd=$(cat /dev/utanodm | tr -cd 0-9a-zA-Z | head -c 32)
+rnd=$(cat /dev/urandom | tr -cd 0-9a-zA-Z | head -c 32)
 [ -e "/home/diverge/rnd" ] && rnd=$(cat /home/diverge/rnd ) #REMOVE OM RELEASE!!!
 mv "fetch" "fetch_$rnd.cgi"
 
