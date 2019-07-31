@@ -3,6 +3,9 @@ source "$(dirname $0)/bin/conf"
 
 [ "$USER" = "root" ] # USER MUST BE root
 
+mkidr -p "$logdir"
+chonw www-data:www-data "$logdir"
+
 ### INSTALLL THIS SYSTEM ###
 rsync -av --delete "$(dirname $0)/bin/" "$appdir/"
 chown www-data:www-data "$appdir" -R

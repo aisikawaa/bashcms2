@@ -4,3 +4,4 @@ wwwdir="/var/www"	     	    # 記事リポジトリやbashcms2を置くディレ
 contentsdir="$wwwdir/$contents"	# 記事リポジトリのパス
 appdir="$wwwdir/bashcms2"	    # bashcms2をインストールするパス
 viewdir="$appdir/view"
+logdir="/var/www/$contents"
