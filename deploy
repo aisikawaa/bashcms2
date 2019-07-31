@@ -4,7 +4,7 @@ source "$(dirname $0)/bin/conf"
 [ "$USER" = "root" ] # USER MUST BE root
 
 mkdir -p "$logdir"
-chonw www-data:www-data "$logdir"
+chown www-data:www-data "$logdir"
 
 ### INSTALLL THIS SYSTEM ###
 rsync -av --delete "$(dirname $0)/bin/" "$appdir/"
