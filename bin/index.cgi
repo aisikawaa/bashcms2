@@ -6,4 +6,4 @@ md="$contentsdir/posts/template/main.md"
 
 ### OUTPUT ###
 pandoc --template="$viewdir/template.html" \
-    -f markdown_github+yaml_matadata_block "$md"
+    -f markdown_github+yaml_metadata_block "$md"
