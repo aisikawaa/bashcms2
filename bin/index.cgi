@@ -17,6 +17,8 @@ cat << FIN > $tmp-meta.yaml
 created_time: $(date -f - < $datadir/$dir/created_time)
 modified_time: $(date -f - < $datadir/$dir/modified_time)
 title: $(grep '^# ' "$md" | sed 's/^# *//')
+---
+FIN
 
 ### OUTPUT ###
 pandoc --template="$viewdir/template.html" \
