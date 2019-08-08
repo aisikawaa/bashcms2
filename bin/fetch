@@ -21,5 +21,5 @@ while read d ; do
     date -f - "+%Y-%m-%d %H:%M:%S"       |
     awk -v cf="$datadir/$d/created_time" \
         -v mf="$datadir/$d/modified_time" \
-        'NR=={print > mf}END{print > cf}'
+        'NR==1{print > mf}END{print > cf}'
 done
