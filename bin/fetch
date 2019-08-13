@@ -18,7 +18,7 @@ while read d ; do
         git log -p "$contentsdir/$d/main.md" |
         grep '^Date:'                        |
         awk '{print $2,$3,$4,$5,$6}'         |
-        date -f -"+%Y-%m-%d %H:%M:%S"        |
+        date -f - "+%Y-%m-%d %H:%M:%S"       |
         awk -v cf="$datadir/$d/created_time"   \
             -v mf="$datadir/$d/modified_time"   \
             'NR==1{print > mf}END{print > cf}'
