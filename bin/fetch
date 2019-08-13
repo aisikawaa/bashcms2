@@ -12,16 +12,16 @@ git pull
 find posts pages -maxdepth 1 -type d    |
 grep /                                  |
 while read d ; do
-    [ -f "$contentsdir/$d/main.md" ] &&
-    mkdir -p "$datadir/$d"           &&
-    ### ADD TIME FILE ###
-    git log -p "$contentsdir/$d/main.md" |
-    grep '^Date:'                       |
-    awk '{print $2,$3,$4,$5,$6}'         |
-    date -f - "+%Y-%m-%d %H:%M:%S"       |
-    awk -v cf="$datadir/$d/created_time" \
-        -v mf="$datadir/$d/modified_time" \
-        'NR==1{print > mf}END{print > cf}'
+        [ -f "$contentdir/$d/main.md" ] &&
+        mkdir -p "$datadir/$d"          &&
+        ### ADD TIME FILES ###
+        git log -p "$contentsdir/$d/main.md" |
+        grep "^Date:"                        |
+        awk '{print $2,$3,$4,$5,$6}'         |
+        date -f -"+%Y-%m-%d %H:%M:%S"        |
+        awk -v cf="$datadir/$d/created_time"   \
+            -v mf="$datadir/$d/modified_time"   \
+            'NR==1{print > mf}END{print > cf}'
 done
 ### DELETE DELETED ARRICLE ###
 cd "$datadir"
