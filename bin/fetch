@@ -43,7 +43,7 @@ while read d ; do
     sed 's/^# *//'                               |
     awk '{if(/^$/){print "NO TITLE"}else{print}}
         END {if(NR==0){print " NO TITLE"}}'      |
-            tee "$datadir/$d/title"              |
+        tee "$datadir/$d/title"                  |
     awk -v d="$d" '{gsub(/s\//,"=",d);
             print "<a href=\"/?" d "\">" $0 "</a>"}' > "$datadir/$d/link"
 
