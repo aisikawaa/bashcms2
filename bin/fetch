@@ -73,7 +73,7 @@ mv $tmp-page_list "$datadir/page_list"
 cat "$datadir/post_list"    |
 while read ymd hms d ; do
         grep -C1 " $d$" "$datadir/post_list"                            |
-        awk {print $3}                                                  |
+        awk '{print $3}'                                                  |
         sed -n -e '1p' -e '$p'                                          |
         xargs -I@  cat "$datadir/@/link"                                |
         awk 'NR<=2{print}END{for(i=NR;i<2;i++){print "LOST TITLE"}}'    |
