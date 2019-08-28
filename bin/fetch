@@ -34,7 +34,7 @@ while read d ; do
 done
 
 #MAKE SOME SHORTCUT
-find posts pages -maxgepth 1 -type d |
+find posts pages -maxdepth 1 -type d |
 grep /                               |
 while read d ; do
     [ -f "$contentsdir/$d/main.md" ] || continue
