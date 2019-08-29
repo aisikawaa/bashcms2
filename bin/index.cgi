@@ -14,7 +14,7 @@ md="$contentsdir/$dir/main.md"
 [ -f "$md" ]
 
 ### MAKE METADATA ###
-counters="$datadir/counters/$(tr '/' '_' <<< $dir)"
+counter="$datadir/counters/$(tr '/' '_' <<< $dir)"
 echo -n 1 >> "$counter" #increment  the counter
 
 cat << FIN > $tmp-meta.yaml
