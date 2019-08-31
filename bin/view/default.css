@@ -3,4 +3,4 @@ body { max-width:1000px; }
 article, nav, header, footer, aside, li { display:block; float:left; }
 
 #article { padding:20px; min-zoom:300px; max-width:600px; }
-#widget { width:320px; margin:20px; float:right; }
+#widgets { width:320px; margin:20px; float:right; }
