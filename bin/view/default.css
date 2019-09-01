@@ -6,7 +6,7 @@ ul { margin-left:30px; }
 a { color:red; text-decoration:none;}
 
 #page-header { text-align:center; width:100%; padding:20px 0px; }
-#page-header a { colorblack;}
+#page-header a { color:black;}
 #page-header li { padding:3px; border-bottom:1px black solid;
     border-left:1px black solid; margin: 3px; }
 
@@ -29,7 +29,7 @@ a { color:red; text-decoration:none;}
 #article-body th{ border:1px black solid; background-color:#EEE; }
 #article-body td{ border:1px black solid; }
 
-#article-footer {width:100%; color:white; background-color:#555; margin:10px 0px; }
+#article-footer { width:100%; color:white; background-color:#555; margin:10px 0px; }
 #article-footer a { color:white; }
 
 #widgets { width:320px; margin:20px; float:right; }
