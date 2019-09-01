@@ -5,7 +5,7 @@ window.onload = function (){
 function lastArticles(num){
     var httpReq = new XMLHttpRequest();
     httpReq.onreadystatechange  = function(){
-        if(httpReq.readyState != 4 || httpReq.satus != 200)
+        if(httpReq.readyState != 4 || httpReq.status != 200)
             return;
 
         document.getElementById("last-articles").innerHTML = httpReq.responseText;
