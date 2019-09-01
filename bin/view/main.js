@@ -2,7 +2,7 @@ window.onload = function () {
     lastArticles(10);
 }
 
-function lastArticles(num) {
+function lastArticles(num){
     var httpReq = new XMLHttpRequest();
     httpReq.onreadystatechange = function(){
         if(httpReq.readyState != 4 || httpReq.satus != 200)
