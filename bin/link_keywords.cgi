@@ -10,5 +10,5 @@ nkf -w16B0                                                  |
 xxd --plain                                                 |
 tr -d '\n'                                                  |
 sed 's/..../\&#x&;/g'                                       |
-sed 's/\&#x000a'                                            |
+sed 's/\&#x000a;/\n/g'                                            |
 awk '{print "<a href=\"/key.cgi?key="$1 "\">" $1 "</a>" }'
