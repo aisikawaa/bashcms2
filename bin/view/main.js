@@ -22,9 +22,9 @@ function linkKeywords(){
         if(httpReq.readyState != 4 || httpReq.status != 200)
             return;
 
-        document.getElementById("Keywords").innerHTML = httpReq.responseText;
+        document.getElementById("keywords").innerHTML = httpReq.responseText;
     }
-    var word = document.getElementById("Keywords").innerHTML;
+    var word = document.getElementById("keywords").innerHTML;
     var url = "/link_keywords.cgi?keywords=" + encodeURIComponent(word);
     httpReq.open("GET",url,true);
     httpReq.send(null);
