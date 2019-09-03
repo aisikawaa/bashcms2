@@ -84,7 +84,6 @@ while read ymd hms d ; do
         tr '\n' ' '                                     > "$datadir/$d/nav"
 done
 
-rm -f $tmp-*
 
 ### MAKE KEYWORD LIST ###
 cd "$contentsdir"
@@ -97,3 +96,5 @@ sed 's/  */ /g'                     |
 awk '{gsub(/^/,",",$2);print}'      |
 sed 's/$/,/'                        > $tmp-keyword_list
 mv $tmp-keyword_list "$datadir/keyword_list"
+
+rm -f $tmp-*
