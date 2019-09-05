@@ -101,7 +101,7 @@ mv $tmp-keyword_list "$datadir/keyword_list"
 cd "$contentsdir"
 cat $tmp-list                       |
 awk '{print $3 "/main.md"}'         |
-xargs grep -H                       |
+xargs grep -H ^                     |
 sed 's;/main.md:; ;'                |
 awk 'a!=$1{c=0;a=$1}c>=2{print}$2~/^---$$/{c++}' |
 awk '$2~/^\*$/|^#*$/{$2=""}{print}'              |
