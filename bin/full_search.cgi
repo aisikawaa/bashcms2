@@ -20,5 +20,5 @@ grep " .*$word"                         |
 awk '{print $1}'                        |
 uniq                                    |
 head -n 100                             |
-zargs -I@ cat "$datadir/@/link_date"    |
-esd 's;$;<br/>;'
+xargs -I@ cat "$datadir/@/link_date"    |
+sed 's;$;<br/>;'
