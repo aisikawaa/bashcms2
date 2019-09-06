@@ -10,7 +10,7 @@ Content-Type: text/html
 
 <h1>Search</h1>
 <input type="text" id="full-search-box" value="$numchar" />
-<button onclick="fullsearch(document.getElementById(
+<button onclick="fullSearch(document.getElementById(
 'full-search-box').value)" >Search</button><br />
 FIN
 
