@@ -14,7 +14,7 @@ Content-Type: text/html
 'full-search-box').value)" >Search</button><br />
 FIN
 
-[ -n "$word" ] &&                       |
+[ -n "$word" ] &&
 tac "$datadir/all_markdown"             |
 grep " .*$word"                         |
 awk '{print $1}'                        |
