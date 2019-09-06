@@ -1,7 +1,7 @@
 window.onload = function (){
     lastArticles(10);
     linkKeywords();
-    fullSeach();
+    fullSearch();
 }
 
 function lastArticles(num){
