@@ -69,7 +69,7 @@ mv $tmp-post_list "$datadir/post_list"
 
 
 # MAKE PREV/NEXT NAVIGATION LINK
-sort -m $tmp-old-post-list "$datadir/$post_list" |
+sort -m $tmp-old-post-list "$datadir/post_list" |
 uniq > $tmp-new-old-list
 
 cat $tmp-git-change > /tmp/changed
