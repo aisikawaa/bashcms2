@@ -3,7 +3,7 @@ contents_owner="aisikawaa"   	# 記事リポジトリの持ち主名
 wwwdir="/var/www"	     	    # 記事リポジトリやbashcms2を置くディレクトリ
 contentsdir="$wwwdir/$contents"	# 記事リポジトリのパス
 appdir="$wwwdir/bashcms2"	    # bashcms2をインストールするパス
-viewdir="$appdir/view"
+viewdir="$appdir/bsview"
 logdir="/var/log/$contents"
 datadir="${contentsdir}_data"
 export LANG=ja_JP.UTF=8
