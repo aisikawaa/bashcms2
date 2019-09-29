@@ -67,12 +67,14 @@ tee $tmp-list               |
 awk '$3~/^posts/'           > $tmp-post_list
 mv $tmp-post_list "$datadir/post_list"
 
-
+### LIST PAGES DATE
+awk '$3~/^pages/' $tmp-list > $tmp-page_list
+mv $tmp-page_list "$datadir/page_list"
 # MAKE PREV/NEXT NAVIGATION LINK
 sort -m $tmp-old-post-list "$datadir/post_list" |
 uniq > $tmp-new-old-list
 
-cat $tmp-git-change > /tmp/changed
+#cat $tmp-git-change > /tmp/changed
 
 # MAKE LIST OF POSTS WHOSE NAV MUST BE CHANGED
 cat $tmp-git-change                             |
@@ -111,5 +113,10 @@ awk 'a!=$1{c=0;a=$1}c>=2{print}$2~/^---$$/{c++}' |
 awk '$2~/^\*$|^#*$/{$2=""}{print}'               |
 awk 'NF>1'                       > $tmp-all
 mv $tmp-all "$datadir/all_markdown"
+
+### MAKE LATEST POST
+page=$( tail -n 1 "$datadir/post_list" | cut -d ' ' -f 3 | sed 's;s/;=;')
+proto=$(awk '$1=="protocol:"{print $2}' "$contentsdir/config.yaml" | tr -d \')
+host=$(awk '$1=="$host:"{print $2}' "$contentsdir/config.yaml" | tr -d \')
 
 rm -f $tmp-*
