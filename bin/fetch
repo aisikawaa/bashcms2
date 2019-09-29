@@ -70,6 +70,7 @@ mv $tmp-post_list "$datadir/post_list"
 ### LIST PAGES DATE
 awk '$3~/^pages/' $tmp-list > $tmp-page_list
 mv $tmp-page_list "$datadir/page_list"
+
 # MAKE PREV/NEXT NAVIGATION LINK
 sort -m $tmp-old-post-list "$datadir/post_list" |
 uniq > $tmp-new-old-list
@@ -118,5 +119,7 @@ mv $tmp-all "$datadir/all_markdown"
 page=$( tail -n 1 "$datadir/post_list" | cut -d ' ' -f 3 | sed 's;s/;=;')
 proto=$(awk '$1=="protocol:"{print $2}' "$contentsdir/config.yaml" | tr -d \')
 host=$(awk '$1=="$host:"{print $2}' "$contentsdir/config.yaml" | tr -d \')
+
+echo $proto"//"$host"/?"$page > "$datadir/last_post"
 
 rm -f $tmp-*
