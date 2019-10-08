@@ -88,8 +88,9 @@ while read ymd hms d ; do
     sed -n -e '1p' -e '$p'                                          |
     xargs -I@ cat "$datadir/@/link"                                 |
     awk 'NR<=2{print}END{for(i=NR;i<2;i++){print "LOST TITLE"}}'    |
-    sed -e '1s/^/prev:/' -e '2s/^/next:/'           > "$datadir/$d/nav"
-    tr '\n' ' '
+    sed -e '1s/^/prev:/' -e '2s/^/next:/'                           |
+    tr '\n' ' '                                            > "$datadir/$d/nav"
+
 done
 
 ### MAKE KEYWORD LIST ###
@@ -116,9 +117,9 @@ awk 'NF>1'                       > $tmp-all
 mv $tmp-all "$datadir/all_markdown"
 
 ### MAKE LATEST POST
-page=$( tail -n 1 "$datadir/post_list" | cut -d ' ' -f 3 | sed 's;s/;=;')
+page=$( tail -n 1 "$datadir/post_list" | cut -d' ' -f 3 | sed 's;s/;=;')
 proto=$(awk '$1=="protocol:"{print $2}' "$contentsdir/config.yaml" | tr -d \')
-host=$(awk '$1=="$host:"{print $2}' "$contentsdir/config.yaml" | tr -d \')
+host=$(awk '$1=="host:"{print $2}' "$contentsdir/config.yaml" | tr -d \')
 
 echo $proto"//"$host"/?"$page > "$datadir/last_post"
 
