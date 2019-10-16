@@ -36,8 +36,8 @@ pandoc --template="$viewdir/template.html" \
 sed -r "/:\/\/|=\"\//!s;<(img src|a href)=\";&/$dir/;g"                 |
 sed "s;/$dir/#;#;g"                                                     |
 ### sedを追加 ###
-sed 's;href="<a href="\(.*\)"[^>]*>.*</a>";href="\1";'
-#sed -r 's;href="<a href="([^"]*)"[^>]*>.*</a>";href="\1";'              |
+#sed 's;href="<a href="\(.*\)"[^>]*>.*</a>";href="\1";'
+sed -r 's;href="<a href="([^"]*)"[^>]*>.*</a>";href="\1";'              |
 sed 's/<table/& class="table table-condensed"/'                         |
 sed -zr 's;(<p id="article-info".*</div>)[\t\n ]+(<h1[^<]+</h1>);\2\n\\1;'
 
