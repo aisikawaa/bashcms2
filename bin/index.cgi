@@ -39,5 +39,5 @@ sed "s;/$dir/#;#;g"                                                     |
 #sed 's;href="<a href="\(.*\)"[^>]*>.*</a>";href="\1";'
 sed -r 's;href="<a href="([^"]*)"[^>]*>.*</a>";href="\1";'              |
 sed 's/<table/& class="table table-condensed"/'                         |
-sed -zr 's;(<p id="article-info".*</div>)[\t\n ]+(<h1[^<]+</h1>);\2\n\\1;'
+sed -zr 's;(<p id="article-info".*</div>)[\t\n ]+(<h1[^<]+</h1>);\2\n\1;'
 
